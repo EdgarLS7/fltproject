@@ -16,13 +16,26 @@ class AppRoutes {
     MenuOption(route: '/card', name: 'Card Screen', screen: const CardScreen(), icon: Icons.credit_card),
   ];
 
-  static Map<String, Widget Function(BuildContext)> routes = {
-    '/home'     : ( _ ) => const HomeScreen(), 
-    '/listview1': ( _ ) => const Listview1Screen(), 
-    '/listview2': ( _ ) => const Listview2Screen(), 
-    '/alert'    : ( _ ) => const AlertScreen(), 
-    '/card'     : ( _ ) => const CardScreen(),
-  };
+  static Map<String, Widget Function(BuildContext)> getAppRoutes() {
+
+    Map<String, Widget Function(BuildContext)> appRoutes = {};
+
+    for (final option in menuOptions) {
+      appRoutes.addAll({ option.route : ( BuildContext context ) => option.screen});
+    }
+
+    return appRoutes;
+  }
+
+  //Mapa de rutas
+
+  // static Map<String, Widget Function(BuildContext)> routes = {
+  //   '/home'     : ( _ ) => const HomeScreen(), 
+  //   '/listview1': ( _ ) => const Listview1Screen(), 
+  //   '/listview2': ( _ ) => const Listview2Screen(), 
+  //   '/alert'    : ( _ ) => const AlertScreen(), 
+  //   '/card'     : ( _ ) => const CardScreen(),
+  // };
 
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     return MaterialPageRoute(
