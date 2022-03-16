@@ -18,6 +18,7 @@ class Listview1Screen extends StatelessWidget {
           ...opciones.map(
             (juegos) => ListTile(
               title: Text(juegos),
+              trailing: const Icon(Icons.arrow_forward_ios_outlined),
             )
           ).toList()
         ],
