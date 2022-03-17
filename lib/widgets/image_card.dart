@@ -2,7 +2,16 @@ import 'package:flt_project/theme/app_theme.dart';
 import 'package:flutter/material.dart';
 
 class ImageCard extends StatelessWidget {
-  const ImageCard({Key? key}) : super(key: key);
+
+  final String imageUrl;
+  final String? cardName;
+
+  const ImageCard({
+    Key? key, 
+    required this.imageUrl, 
+    this.cardName
+  }) : super(key: key);
+
 
   @override
   Widget build(BuildContext context) {
@@ -16,19 +25,20 @@ class ImageCard extends StatelessWidget {
       child: Column(
         children: [
           
-          const FadeInImage(
-            image: NetworkImage('https://www.creativefabrica.com/wp-content/uploads/2021/06/12/mountain-landscape-illustration-design-b-Graphics-13326021-1.jpg'),
-            placeholder: AssetImage('assets/jar-loading.gif'),
+          FadeInImage(
+            image: NetworkImage( imageUrl ),
+            placeholder: const AssetImage('assets/jar-loading.gif'),
             width: double.infinity,
             height: 300,
             fit: BoxFit.cover,
-            fadeInDuration: Duration(milliseconds: 300),
+            fadeInDuration: const Duration(milliseconds: 300),
           ),
           
+          if ( cardName != null )
           Container(
             alignment: AlignmentDirectional.centerEnd,
-            padding: const EdgeInsets.only( right: 20, top: 10, bottom: 10),
-            child: const Text('Paisaje Natural'),
+            padding: const EdgeInsets.only( right: 20, top: 5, bottom: 5),
+            child: Text( cardName! ),
           )
         ],
       )

@@ -16,16 +16,16 @@ class CardScreen extends StatelessWidget {
         children: const [
 
           CustomCard(),
-          SizedBox(height: 15,),
-          ImageCard(),
-          SizedBox(height: 15,),
-          ImageCard(),
-          SizedBox(height: 15,),
-          ImageCard(),
-          SizedBox(height: 15,),
-          ImageCard(),
-          SizedBox(height: 50,),
-
+          SizedBox( height: 15,),
+          ImageCard( imageUrl: 'https://www.creativefabrica.com/wp-content/uploads/2021/06/12/mountain-landscape-illustration-design-b-Graphics-13326021-1.jpg'),
+          SizedBox( height: 20,),
+          ImageCard( imageUrl: 'https://epsep.com.mx/wp-content/uploads/2020/10/travel-landscape-01.jpg'),
+          SizedBox( height: 20,),
+          ImageCard( imageUrl: 'http://www.solofondos.com/wp-content/uploads/2016/04/mountain-landscape-wallpaper.jpg'),
+          SizedBox( height: 20,),
+          ImageCard( cardName: 'Un Paisaje',
+            imageUrl: 'https://www.mickeyshannon.com/photos/landscape-photography.jpg',),
+          SizedBox( height: 50,),
 
         ],
       )
