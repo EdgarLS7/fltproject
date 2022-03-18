@@ -34,9 +34,10 @@ class _AnimatedScreenState extends State<AnimatedScreen> {
     _borderRadius = BorderRadius.circular(random.nextInt(100).toDouble());
 
     // Define how long the animation should take.
-  duration: const Duration(seconds: 1);
-  // Provide an optional curve to make the animation feel smoother.
-  curve: Curves.fastOutSlowIn;
+    const Duration(seconds: 1);
+    
+    // Provide an optional curve to make the animation feel smoother.
+    Curves.fastOutSlowIn;
 
   setState(() {
     
