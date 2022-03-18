@@ -12,14 +12,18 @@ class AvatarScreen extends StatelessWidget {
         actions: [
           Container(
             margin: const EdgeInsets.only( right: 5),
-            child: const CircleAvatar(
-              child: Text('SL'),
+            child: CircleAvatar(
+              child: const Text('SL'),
+              backgroundColor: Colors.orange[800]
             ),
           )
         ],
       ),
       body: const Center(
-         child: Text('AvatarScreen'),
+         child: CircleAvatar(
+           maxRadius: 120,
+           backgroundImage: NetworkImage('https://i.blogs.es/85aa44/stan-lee/1366_2000.jpg'),
+         ),
       ),
     );
   }
