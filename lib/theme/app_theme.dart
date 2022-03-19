@@ -33,6 +33,10 @@ class AppTheme {
         elevation: 5,
       )
     ),
+
+    inputDecorationTheme: const InputDecorationTheme(
+      
+    )
   );
 
   static final ThemeData darkTheme = ThemeData.dark().copyWith(

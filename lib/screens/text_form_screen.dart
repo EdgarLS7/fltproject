@@ -39,6 +39,12 @@ class TextFormScreen extends StatelessWidget {
                       topRight: Radius.circular(10)
                     )
                   ),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(
+                      color: Colors.green
+                    )
+                  ) ,
+
                   //final
                   suffixIcon: Icon(Icons.group_outlined),
 
