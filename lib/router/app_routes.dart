@@ -52,6 +52,12 @@ class AppRoutes {
       name: 'TextForm Screen',
       screen: const TextFormScreen(),
       icon: Icons.text_snippet_outlined),
+
+      MenuOption(
+      route: '/Register',
+      name: 'Register Screen',
+      screen: const RegisterScreen(),
+      icon: Icons.app_registration_sharp),
   ];
 
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
@@ -59,6 +65,7 @@ class AppRoutes {
     Map<String, Widget Function(BuildContext)> appRoutes = {};
     appRoutes.addAll({ '/home'  : (BuildContext context ) => const HomeScreen()});
     appRoutes.addAll({ '/login' : (BuildContext context ) => const LoginScreen()});
+    appRoutes.addAll({ '/register' : (BuildContext context ) => const RegisterScreen()});
 
     for (final option in menuOptions) {
       appRoutes.addAll({ option.route : ( BuildContext context ) => option.screen});
