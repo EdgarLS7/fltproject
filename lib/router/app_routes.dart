@@ -1,10 +1,11 @@
 import 'package:flt_project/models/models.dart';
+import 'package:flt_project/screens/login_screen.dart';
 import 'package:flt_project/screens/screens.dart';
 import 'package:flutter/material.dart';
 
 class AppRoutes {
 
-  static const initialRoute = '/home';
+  static const initialRoute = '/login';
 
   static final menuOptions = <MenuOption> [
     
@@ -56,7 +57,8 @@ class AppRoutes {
   static Map<String, Widget Function(BuildContext)> getAppRoutes() {
 
     Map<String, Widget Function(BuildContext)> appRoutes = {};
-    appRoutes.addAll({ '/home' : (BuildContext context ) => const HomeScreen()});
+    appRoutes.addAll({ '/home'  : (BuildContext context ) => const HomeScreen()});
+    appRoutes.addAll({ '/login' : (BuildContext context ) => const LoginScreen()});
 
     for (final option in menuOptions) {
       appRoutes.addAll({ option.route : ( BuildContext context ) => option.screen});
