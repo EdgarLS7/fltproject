@@ -1,4 +1,5 @@
 
+import 'package:flt_project/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 
 class TextFormScreen extends StatelessWidget {
@@ -15,47 +16,38 @@ class TextFormScreen extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric( horizontal: 20, vertical: 10),
           child: Column(
-            children: [
+            children: const [
               
-              TextFormField(
-                autofocus: false,
-                // initialValue: 'Edgar Lopez',
-                textCapitalization: TextCapitalization.words,
-                onChanged: ( value ) {
-                  print('value: $value');
-                },
-                validator: (value) {
-                  if ( value == null ) return 'Este campo es requerido';
-                  return value.length < 3 ? 'Minimo de 3 letras' : null;
-                },
-                autovalidateMode: AutovalidateMode.onUserInteraction,
-                decoration: const InputDecoration(
-                  hintText: 'Nombre del usuario',
-                  labelText: 'Nombre',
-                  helperText: 'Solo letras perro',
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.only( 
-                      bottomLeft: Radius.circular(10),
-                      topRight: Radius.circular(10)
-                    )
-                  ),
-                  focusedBorder: OutlineInputBorder(
-                    borderSide: BorderSide(
-                      color: Colors.green
-                    )
-                  ) ,
+              CustomInputField(
+                keyboardType: TextInputType.name,
+                labelText: 'Nombre',
+                hintText: 'Nombre del Usuario',
+              ),
 
-                  //final
-                  suffixIcon: Icon(Icons.group_outlined),
+              SizedBox( height: 30 ),
 
-                  // icono al principio
-                  // prefixIcon: Icon(Icons.smoke_free_outlined),
-                  // -----------------------------------------------
-                  // Al principio y recorre el textform
-                  // icon: Icon(Icons.abc_rounded)
-                ),
-              )
+              CustomInputField(
+                keyboardType: TextInputType.name,
+                labelText: 'Apellido',
+                hintText: 'Apellido del Usuario',
+              ),
 
+              SizedBox( height: 30 ),
+
+              CustomInputField(
+                keyboardType: TextInputType.emailAddress,
+                labelText: 'Correo',
+                hintText: 'Correo del Usuario',
+              ),
+
+              SizedBox( height: 30 ),
+
+              CustomInputField(
+                keyboardType: TextInputType.visiblePassword,
+                obscureText: true,
+                labelText: 'Contraseña',
+                hintText: 'Contraseña del usuario',
+              ),
             ],
           ),
         ),
@@ -63,3 +55,4 @@ class TextFormScreen extends StatelessWidget {
     );
   }
 }
+
